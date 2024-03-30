@@ -18,16 +18,27 @@ class DashBoardDesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 2,
-          child: Column(
-            children: [
-              AllExpensess(),
-              SizedBox(
-                height: 34,
-              ),
-              QuickInvoice(),
-            ],
-          ),
+          child: AllExpensesAndQuickInvoiceSection(),
         ),
+      ],
+    );
+  }
+}
+
+class AllExpensesAndQuickInvoiceSection extends StatelessWidget {
+  const AllExpensesAndQuickInvoiceSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        AllExpensess(),
+        SizedBox(
+          height: 34,
+        ),
+        QuickInvoice(),
       ],
     );
   }
