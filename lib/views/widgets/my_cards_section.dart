@@ -27,6 +27,7 @@ class _MyCardsSectionState extends State<MyCardsSection> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           width: 420,
