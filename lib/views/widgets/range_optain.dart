@@ -20,16 +20,16 @@ class RangeOptain extends StatelessWidget {
           ),
         ),
       ),
-      child: const Row(
+      child: Row(
         children: [
           Text(
             'Monthly',
-            style: AppStyles.styleMedium16,
+            style: AppStyles.styleMedium16(context),
           ),
-          SizedBox(
+          const SizedBox(
             width: 18,
           ),
-          Icon(
+          const Icon(
             Icons.keyboard_arrow_down_rounded,
             color: Color(0xFF064061),
             size: 37,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/model/item_details_model.dart';
 import 'package:responsive_dash_board/views/widgets/income_details_item.dart';
@@ -28,12 +30,22 @@ class IncomeDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) => IncomeDetailsItem(
-        itemDetailsModel: items[index],
-      ),
+    log(MediaQuery.sizeOf(context).width.toString());
+    return Column(
+      children: items
+          .map(
+            (e) => IncomeDetailsItem(itemDetailsModel: e),
+          )
+          .toList(),
     );
+    //مينفعش تستخدمها و انت اصلا حطتها في customScrollView
+    // و كدلك انك بتستخدم shrinkWrap : true يبقي احسن حل هو ال column
+    // return ListView.builder(
+    //   itemCount: items.length,
+    //   shrinkWrap: true,
+    //   itemBuilder: (context, index) => IncomeDetailsItem(
+    //     itemDetailsModel: items[index],
+    //   ),
+    // );
   }
 }
